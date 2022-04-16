@@ -1,13 +1,132 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* ------------------------------------------------------ */
+/*                          Fonts                         */
+/* ------------------------------------------------------ */
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+
+/* ------------------------------------------------------ */
+/*                    Custom Properties                   */
+/* ------------------------------------------------------ */
+:root {
+    /* Border Radii */
+    --br-md: .5rem;
+    --br-pill: 100vmax;
+
+    /* Colors */
+    --clr-sedans: hsl(31, 77%, 52%);
+    --clr-suvs: hsl(184, 100%, 22%);
+    --clr-luxury: hsl(179, 100%, 13%);
+    --clr-body-bg: hsl(0, 0%, 95%);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* ------------------------------------------------------ */
+/*                Resets and Global Styles                */
+/* ------------------------------------------------------ */
+.sr-only {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
 }
+
+* { box-sizing: border-box; }
+
+body,
+h2, p,
+button { margin: 0; }
+
+body {
+    display: grid;
+    min-height: 100vh;
+    font: .9375rem/1.65 'Lexend Deca', sans-serif;
+    padding: 5rem 1.5rem;
+    color: var(--clr-body-bg);
+    background: var(--clr-body-bg);
+}
+
+main {
+    max-width: 35.75rem;
+    border-radius: var(--br-md);
+    margin: auto;
+    overflow: hidden;
+}
+
+@media only screen and (min-width: 66em) {
+    main {
+        display: grid;
+        grid-auto-flow: column;
+        max-width: 57.5rem;
+    }
+}
+
+/* ------------------------------------------------------ */
+/*                          Cards                         */
+/* ------------------------------------------------------ */
+.card {
+    display: grid;
+    padding: 3rem;
+}
+
+.card__title {
+    font: 2.4375rem/1 'Big Shoulders Display', sans-serif;
+    letter-spacing: .01em;
+    text-transform: uppercase;
+    margin-bottom: 1.875rem;
+}
+
+.card__description {
+    margin-bottom: 1.5625rem;
+    opacity: .8;
+}
+
+@media only screen and (min-width: 66em) {
+    .card__description { margin-bottom: 5.25rem; }
+}
+
+.card__image {
+    order: -1;
+    margin-bottom: 2.4735rem;
+}
+
+.card__button {
+    position: relative;
+    z-index: 1;
+    min-height: 44px;
+    width: 9.125rem;
+    font: inherit;
+    padding: .5625rem 1rem .625rem .875rem;
+    border: .125rem solid var(--clr-body-bg);
+    border-radius: var(--br-pill);
+    margin-top: auto;
+    background: none;
+    cursor: pointer;
+    transition: color 200ms;
+}
+
+/* ----------------------- Sedans ----------------------- */
+.card--sedans { background: var(--clr-sedans); }
+
+.card--sedans > .card__button { color: var(--clr-sedans); }
+
+/* ------------------------ SUVs ------------------------ */
+.card--suvs { background: var(--clr-suvs); }
+
+.card--suvs > .card__button { color: var(--clr-suvs); }
+
+/* ----------------------- Luxury ----------------------- */
+.card--luxury { background: var(--clr-luxury); }
+
+.card--luxury > .card__button { color: var(--clr-luxury); }
+
+/* --------------- Button Hover Animation --------------- */
+.card__button::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: -.125rem;
+    border-radius: inherit;
+    background: var(--clr-body-bg);
+    transition: opacity 200ms;
+}
+
+.card__button:hover { color: var(--clr-body-bg); }
+
+.card__button:hover::after { opacity: 0; }
