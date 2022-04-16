@@ -11,7 +11,7 @@ Users should be able to:
 
 ## Screenshot
 
-![](./public/design/screenshot-desktop.png)
+![](./public/screenshot-desktop.png)
 
 ## Built with
 
