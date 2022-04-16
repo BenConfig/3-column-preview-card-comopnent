@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+# Frontend Mentor - 3-Column Preview Card Component Solution
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a solution to the [3-Column Preview Card Component Challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/3column-preview-card-component-pH92eAR2-). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-## Available Scripts
+## The challenge
 
-In the project directory, you can run:
+Users should be able to:
 
-### `npm start`
+- View the optimal layout depending on their device's screen size
+- See hover states for interactive elements
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Screenshot
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![](./public/design/screenshot-desktop.png)
 
-### `npm test`
+## Built with
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- CSS Grid
+- Mobile-first workflow
+- React
 
-### `npm run build`
+## What I learned
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+I have been following the freeCodeCamp React course and decided to create this page to practice what I have learnt so far.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+I am pleased that I managed to get React to actually run in the first place. I built a component called 'Card' which represents one of the three sections on the page. I also used 'props' to add the information to each card, which is pulled from a separate data file.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```js
+export default function Card(props) {
+    return (
+        <section className={`card card--${props.title.toLowerCase()}`}>
+            <h2 className="card__title">{props.title}</h2>
+            <p className="card__description">{props.description}</p>
+            <img className="card__image" src={require(`./images/${props.image}`)} alt="" aria-hidden="true" />
+            <button className="card__button" type="button">Learn More</button>
+        </section>
+    )
+}
+```
 
-### `npm run eject`
+## Continued development
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+I will continue to work through the React course on freeCodeCamp. I know the next section talks about 'state', and I will perhaps pick another FEM project to practice this.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Useful resources
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+[React Course - Beginner's Tutorial for React JavaScript Library [2022]](https://www.youtube.com/watch?v=bMknfKXIFA8) - This is the React course I am working through. It has been a big help.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
