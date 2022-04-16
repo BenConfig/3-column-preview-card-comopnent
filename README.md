@@ -26,7 +26,7 @@ Users should be able to:
 
 I have been following the freeCodeCamp React course and decided to create this page to practice what I have learnt so far.
 
-I am pleased that I managed to get React to actually run in the first place. I built a component called 'Card' which represents one of the three sections on the page. I also used 'props' to add the information to each card, which is pulled from a separate data file.
+I am pleased that I managed to get React to actually run in the first place. I built a component called 'Card' which represents the three sections on the page. I also used 'props' to add the information to each card, which is pulled from a separate data file.
 
 ```js
 export default function Card(props) {
